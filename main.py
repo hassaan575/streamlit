@@ -36,28 +36,6 @@ def view_all_users():
 	data = c.fetchall()
 	return data
 
-conn1 = sqlite3.connect('data1.db')
-c = conn1.cursor()
-# DB  Functions
-def create_usertable1():
-	c.execute('CREATE TABLE IF NOT EXISTS userstable(username TEXT,password TEXT)')
-
-
-def add_userdata1(username,password):
-	c.execute('INSERT INTO userstable(username,password) VALUES (?,?)',(username,password))
-	conn1.commit()
-
-def login_user1(username,password):
-	c.execute('SELECT * FROM userstable WHERE username =? AND password = ?',(username,password))
-	data = c.fetchall()
-	return data
-
-
-def view_all_users1():
-	c.execute('SELECT * FROM userstable')
-	data = c.fetchall()
-	return data
-
 def main():
 	"""Stock Prediction Website"""
 
@@ -75,7 +53,7 @@ def main():
 		password = st.sidebar.text_input("Password",type='password')
 		if st.sidebar.checkbox("Login"):
 			# if password == '12345':
-			create_usertable1()
+			create_usertable()
 			hashed_pswd = make_hashes(password)
 
 			result = login_user(username,check_hashes(password,hashed_pswd))
@@ -132,8 +110,8 @@ def main():
 		new_password = st.text_input("Password",type='password')
 
 		if st.button("Signup"):
-			create_usertable1()
-			add_userdata1(new_user,make_hashes(new_password))
+			create_usertable()
+			add_userdata(new_user,make_hashes(new_password))
 			st.success("You have successfully created a valid Account")
 			st.info("Go to Login Menu to login")
 
