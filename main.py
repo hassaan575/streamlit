@@ -113,7 +113,7 @@ def main():
 			if result:
 				
 				st.success("Logged In as {}".format(username))
-				task = st.selectbox("Task",["A"])
+				task = st.selectbox("Task",["Navigation Bar"])
 
 	elif choice == "Login  as User":
 		st.subheader("User Section")
@@ -130,7 +130,7 @@ def main():
 
 				st.success("Logged In as {}".format(username))
 
-				task = st.selectbox("Task",["Prediction Page"])
+				task = st.selectbox(["Task","Prediction Page"])
 				if task == "Prediction Page":
 					st.subheader("Prediction Page")
 
