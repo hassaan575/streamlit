@@ -43,7 +43,7 @@ def main():
 
 	st.title("Simple Login App")
 
-	menu = ["Home","Login","SignUp","Loginadmin","SignupAdmin"]
+	menu = ["Home","Login","SignUp","Login As Admin","SignUp As Admin"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Home":
