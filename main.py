@@ -49,7 +49,7 @@ def main():
 	if choice == "Home":
 		st.subheader("Home")
 	elif choice == "Login As Admin":
-		st.subheader("Login As Admin Section")	
+		st.subheader("Admin Section")	
 		
 		username = st.sidebar.text_input("User Name")
 		password = st.sidebar.text_input("Password",type='password')
@@ -64,7 +64,7 @@ def main():
 				st.success("Logged In as {}".format(username))
 				task = st.selectbox("Task",["A"])
 	elif choice == "Login  as User":
-		st.subheader("Login As User Section")
+		st.subheader("User Section")
 
 		username = st.sidebar.text_input("User Name")
 		password = st.sidebar.text_input("Password",type='password')
