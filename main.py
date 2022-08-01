@@ -116,7 +116,7 @@ def main():
 
 
 
-	elif choice == "SignUp as User" 
+	elif choice == "SignUp as User": 
 		st.subheader("Create New Account")
 		new_user = st.text_input("Username")
 		new_password = st.text_input("Password",type='password')
