@@ -65,8 +65,9 @@ def main():
 				st.success("Logged In as {}".format(username))
 				task = st.selectbox("Task",["A"])
 			if st.button("Logout"):
-				menu1 = ["Home","Login  as User","SignUp as User","Login As Admin","SignUp As Admin"]
+				menu1 = ["Home"]
 				choice1 = st.sidebar.selectbox("Menu1",menu1)
+				st.subheader("Home")
 	elif choice == "Login  as User":
 		st.subheader("User Section")
 
@@ -94,9 +95,9 @@ def main():
 					clean_db = pd.DataFrame(user_result,columns=["Username","Password"])
 					st.dataframe(clean_db)
 				if st.button("Logout"):
-					menu1 = ["Home","Login  as User","SignUp as User","Login As Admin","SignUp As Admin"]
+					menu1 = ["Home"]
 					choice1 = st.sidebar.selectbox("Menu1",menu1)
-					
+					st.subheader("Home")
 			else:
 				st.warning("Incorrect Username/Password")
 
