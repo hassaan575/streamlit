@@ -93,7 +93,7 @@ def main():
 					clean_db = pd.DataFrame(user_result,columns=["Username","Password"])
 					st.dataframe(clean_db)
 				if st.button("Logout"):
-					st.subheader("Home")
+					main()
 			else:
 				st.warning("Incorrect Username/Password")
 
