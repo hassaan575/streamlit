@@ -38,8 +38,7 @@ def view_all_users():
 	c.execute('SELECT * FROM userstable')
 	data = c.fetchall()
 	return data
-
-def main():
+def func():
 	"""Stock Prediction Website"""
 
 	st.title("Stock Prediction Website")
@@ -122,6 +121,8 @@ def main():
 			st.success("You have successfully created a valid Account")
 			st.info("Go to Login Menu to login")
 
-
+	
+def main():
+	func()
 if __name__ == '__main__':
 	main()
