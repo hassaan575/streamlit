@@ -94,7 +94,7 @@ def main():
 					clean_db = pd.DataFrame(user_result,columns=["Username","Password"])
 					st.dataframe(clean_db)
 				if st.button("Logout"):
-					menu = ["Home","Login  as User","SignUp as User","Login As Admin","SignUp As Admin"]
+					menu1 = ["Home","Login  as User","SignUp as User","Login As Admin","SignUp As Admin"]
 					choice1 = st.sidebar.selectbox("Menu1",menu1)
 					
 			else:
