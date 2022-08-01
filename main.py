@@ -5,16 +5,6 @@ import requests  # pip install requests
 import streamlit as st
 
 
-app = MultiApp()
-# Add all your application here
-app.add_app("homepage", h1.app)
-app.add_app("Progress", progress.app)
-app.add_app("recommendation", recommendation.app)
-app.add_app("Stockdata", t1.app)
-app.add_app("Sto", prediction.app)
-app.add_app("prediction", newp.app)
-
-
 class MultiApp:
     """Framework for combining multiple streamlit applications.
     Usage:
