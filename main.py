@@ -90,6 +90,9 @@ def main():
 					user_result = view_all_users()
 					clean_db = pd.DataFrame(user_result,columns=["Username","Password"])
 					st.dataframe(clean_db)
+				if st.button("Logout"):
+					st.subheader("Prediction Page")
+					
 			else:
 				st.warning("Incorrect Username/Password")
 
