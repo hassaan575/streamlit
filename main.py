@@ -43,10 +43,10 @@ def main():
 
 	st.title("Stock Prediction Website")
 
-	menu = ["Home/LogOut","Login  as User","SignUp as User","Login As Admin","SignUp As Admin"]
+	menu = ["Home or LogOut","Login  as User","SignUp as User","Login As Admin","SignUp As Admin"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
-	if choice == "Home/LogOut":
+	if choice == "Home or LogOut":
 		st.subheader("Home")
 	elif choice == "Login As Admin":
 		st.subheader("Admin Section")	
