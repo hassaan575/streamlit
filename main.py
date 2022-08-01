@@ -38,90 +38,6 @@ def view_all_users():
 	c.execute('SELECT * FROM userstable')
 	data = c.fetchall()
 	return data
-def func():
-	"""Stock Prediction Website"""
-
-	st.title("Stock Prediction Website")
-
-	menu = ["Home","Login  as User","SignUp as User","Login As Admin","SignUp As Admin"]
-	choice = st.sidebar.selectbox("Menu",menu)
-
-	if choice == "Home":
-		st.subheader("Home")
-	elif choice == "Login As Admin":
-		st.subheader("Admin Section")	
-		
-		username = st.sidebar.text_input("User Name")
-		password = st.sidebar.text_input("Password",type='password')
-		if st.sidebar.checkbox("Login"):
-			# if password == '12345':
-			create_usertable()
-			hashed_pswd = make_hashes(password)
-
-			result = login_user(username,check_hashes(password,hashed_pswd))
-			if result:
-				
-				st.success("Logged In as {}".format(username))
-				task = st.selectbox("Task",["A"])
-			if st.button("Logout"):
-				st.subheader("Home")
-	elif choice == "Login  as User":
-		st.subheader("User Section")
-
-		username = st.sidebar.text_input("User Name")
-		password = st.sidebar.text_input("Password",type='password')
-		if st.sidebar.checkbox("Login"):
-			# if password == '12345':
-			create_usertable()
-			hashed_pswd = make_hashes(password)
-
-			result = login_user(username,check_hashes(password,hashed_pswd))
-			if result:
-
-				st.success("Logged In as {}".format(username))
-
-				task = st.selectbox("Task",["Prediction Page","Increased Interest Rate","Add Stock to Fav List","Future Trend","Recommendation", "Stock Data","STO", "Prediction" ])
-				if task == "Prediction Page":
-					st.subheader("Prediction Page")
-
-				elif task == "Increased Interest Rate":
-					st.subheader("Increased Interest Rate")
-				elif task == "Add Stock to Fav List":
-					st.subheader("User Profiles")
-					user_result = view_all_users()
-					clean_db = pd.DataFrame(user_result,columns=["Username","Password"])
-					st.dataframe(clean_db)
-				if st.button("Logout"):
-					main()
-			else:
-				st.warning("Incorrect Username/Password")
-
-
-
-
-
-	elif choice == "SignUp as User": 
-		st.subheader("Create New Account")
-		new_user = st.text_input("Username")
-		new_password = st.text_input("Password",type='password')
-
-		if st.button("Signup"):
-			create_usertable()
-			add_userdata(new_user,make_hashes(new_password))
-			st.success("You have successfully created a valid Account")
-			st.info("Go to Login Menu to login")
-	elif choice == choice == "SignUp As Admin":
-		st.subheader("Create New Account")
-		new_user = st.text_input("Username")
-		new_password = st.text_input("Password",type='password')
-
-		if st.button("Signup"):
-			create_usertable()
-			add_userdata(new_user,make_hashes(new_password))
-			st.success("You have successfully created a valid Account")
-			st.info("Go to Login Menu to login")
-
-	
 def main():
 	"""Stock Prediction Website"""
 
@@ -148,7 +64,7 @@ def main():
 				st.success("Logged In as {}".format(username))
 				task = st.selectbox("Task",["A"])
 			if st.button("Logout"):
-				st.subheader("Home")
+				c.execute('DELETE FROM userstable where usertable.username = username')
 	elif choice == "Login  as User":
 		st.subheader("User Section")
 
