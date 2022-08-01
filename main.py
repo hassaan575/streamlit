@@ -90,6 +90,10 @@ def main():
 
 	st.title("Stock Prediction Website")
 
+	st.markdown("""
+		# Trading Through Machine Learning
+		We use Machine Learning Algorithm to predict the future price of a stock
+		""")
 	menu = ["Home or LogOut","Login  as User","SignUp as User","Login As Admin","SignUp As Admin"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
