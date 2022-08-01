@@ -39,17 +39,17 @@ def view_all_users():
 
 
 def main():
-	"""Simple Login App"""
+	"""Stock Prediction Website"""
 
-	st.title("Simple Login App")
+	st.title("Stock Prediction Website")
 
-	menu = ["Home","Login","SignUp","Login As Admin","SignUp As Admin"]
+	menu = ["Home","Login  as User","SignUp as User","Login As Admin","SignUp As Admin"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Home":
 		st.subheader("Home")
 
-	elif choice == "Login":
+	elif choice == "Login  as User":
 		st.subheader("Login Section")
 
 		username = st.sidebar.text_input("User Name")
@@ -82,7 +82,7 @@ def main():
 
 
 
-	elif choice == "SignUp":
+	elif choice == "SignUp as User":
 		st.subheader("Create New Account")
 		new_user = st.text_input("Username")
 		new_password = st.text_input("Password",type='password')
