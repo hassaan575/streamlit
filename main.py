@@ -48,9 +48,23 @@ def main():
 
 	if choice == "Home":
 		st.subheader("Home")
-
 	elif choice == "Login  as User":
-		st.subheader("Login Section")
+		st.subheader("Login As Admin Section")	
+		
+		username = st.sidebar.text_input("User Name")
+		password = st.sidebar.text_input("Password",type='password')
+		if st.sidebar.checkbox("Login"):
+			# if password == '12345':
+			create_usertable()
+			hashed_pswd = make_hashes(password)
+
+			result = login_user(username,check_hashes(password,hashed_pswd))
+			if result:
+				
+				st.success("Logged In as {}".format(username))
+				task = st.selectbox("Task",["A"])
+	elif choice == "Login  as User":
+		st.subheader("Login As User Section")
 
 		username = st.sidebar.text_input("User Name")
 		password = st.sidebar.text_input("Password",type='password')
@@ -82,7 +96,7 @@ def main():
 
 
 
-	elif choice == "SignUp as User":
+	elif choice == "SignUp as User" or choice == "SignUp As Admin":
 		st.subheader("Create New Account")
 		new_user = st.text_input("Username")
 		new_password = st.text_input("Password",type='password')
