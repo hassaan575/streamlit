@@ -64,7 +64,7 @@ def main():
 				st.success("Logged In as {}".format(username))
 				task = st.selectbox("Task",["A"])
 			if st.button("Logout"):
-				c.execute('DELETE FROM userstable where usertable.username = username')
+				c.execute('DELETE FROM userstable where username = username')
 	elif choice == "Login  as User":
 		st.subheader("User Section")
 
@@ -92,7 +92,7 @@ def main():
 					clean_db = pd.DataFrame(user_result,columns=["Username","Password"])
 					st.dataframe(clean_db)
 				if st.button("Logout"):
-					c.execute('DELETE FROM userstable where usertable.username = username')
+					c.execute('DELETE FROM userstable where username = username')
 			else:
 				st.warning("Incorrect Username/Password")
 
