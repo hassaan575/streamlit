@@ -5,7 +5,7 @@ import requests  # pip install requests
 import streamlit as st
 
 
-
+app = MultiApp()
 # Add all your application here
 app.add_app("homepage", h1.app)
 app.add_app("Progress", progress.app)
