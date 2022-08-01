@@ -36,7 +36,27 @@ def view_all_users():
 	data = c.fetchall()
 	return data
 
+conn = sqlite3.connect('data1.db')
+c = conn.cursor()
+# DB  Functions
+def create_usertable1():
+	c.execute('CREATE TABLE IF NOT EXISTS userstable(username TEXT,password TEXT)')
 
+
+def add_userdata1(username,password):
+	c.execute('INSERT INTO userstable(username,password) VALUES (?,?)',(username,password))
+	conn.commit()
+
+def login_user1(username,password):
+	c.execute('SELECT * FROM userstable WHERE username =? AND password = ?',(username,password))
+	data = c.fetchall()
+	return data
+
+
+def view_all_users1():
+	c.execute('SELECT * FROM userstable')
+	data = c.fetchall()
+	return data
 
 def main():
 	"""Stock Prediction Website"""
@@ -55,7 +75,7 @@ def main():
 		password = st.sidebar.text_input("Password",type='password')
 		if st.sidebar.checkbox("Login"):
 			# if password == '12345':
-			create_usertable()
+			create_usertable1()
 			hashed_pswd = make_hashes(password)
 
 			result = login_user(username,check_hashes(password,hashed_pswd))
@@ -96,7 +116,7 @@ def main():
 
 
 
-	elif choice == "SignUp as User" or choice == "SignUp As Admin":
+	elif choice == "SignUp as User" 
 		st.subheader("Create New Account")
 		new_user = st.text_input("Username")
 		new_password = st.text_input("Password",type='password')
@@ -106,7 +126,16 @@ def main():
 			add_userdata(new_user,make_hashes(new_password))
 			st.success("You have successfully created a valid Account")
 			st.info("Go to Login Menu to login")
+	elif choice == choice == "SignUp As Admin":
+		st.subheader("Create New Account")
+		new_user = st.text_input("Username")
+		new_password = st.text_input("Password",type='password')
 
+		if st.button("Signup"):
+			create_usertable1()
+			add_userdata1(new_user,make_hashes(new_password))
+			st.success("You have successfully created a valid Account")
+			st.info("Go to Login Menu to login")
 
 
 if __name__ == '__main__':
