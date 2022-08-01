@@ -48,7 +48,7 @@ def main():
 
 	if choice == "Home":
 		st.subheader("Home")
-	elif choice == "Login  as User":
+	elif choice == "Login As Admin":
 		st.subheader("Login As Admin Section")	
 		
 		username = st.sidebar.text_input("User Name")
