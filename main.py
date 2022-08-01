@@ -2,7 +2,30 @@ import streamlit as st
 import pandas as pd
 import json
 import requests  # pip install requests
-import streamlit as st
+import requests  # pip install requests
+from multiapp import MultiApp
+from apps import progress, h1, newp, recommendation, t1, prediction  # import your app modules here
+from streamlit_lottie import st_lottie  # pip install streamlit-lottie
+
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottie_hello = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_bek1x1xd.json")
+
+st_lottie(
+    lottie_hello,
+    speed=1,
+    reverse=False,
+    loop=True,
+    quality="low",  # medium ; high
+    # canvas
+    height=None,
+    width=None,
+    key=None,
+)
 
 
 class MultiApp:
@@ -85,7 +108,20 @@ def view_all_users():
 	c.execute('SELECT * FROM userstable')
 	data = c.fetchall()
 	return data
+
+
+
 def main():
+
+	app = MultiApp()
+	app1 = MultiApp()
+	app.add_app("homepage", h1.app)
+	app.add_app("Progress", progress.app)
+	app.add_app("recommendation", recommendation.app)
+	app1.add_app("Stockdata", t1.app)
+	app.add_app("Sto", prediction.app)
+	app.add_app("prediction", newp.app)
+
 	"""Stock Prediction Website"""
 
 	st.title("Stock Prediction Website")
@@ -113,6 +149,7 @@ def main():
 			if result:
 				
 				st.success("Logged In as {}".format(username))
+				app1.run()
 				
 
 	elif choice == "Login  as User":
@@ -129,6 +166,7 @@ def main():
 			if result:
 
 				st.success("Logged In as {}".format(username))
+				app.run()
 
 			else:
 				st.warning("Incorrect Username/Password")
