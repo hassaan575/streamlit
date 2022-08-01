@@ -79,7 +79,7 @@ def main():
 
 				st.success("Logged In as {}".format(username))
 
-				task = st.selectbox("Task",["Prediction Page","Increased Interest Rate","Add Stock to Fav List"])
+				task = st.selectbox("Task",["Prediction Page","Increased Interest Rate","Add Stock to Fav List","Recommendation", "Stock Data","STO", "Prediction" ])
 				if task == "Prediction Page":
 					st.subheader("Prediction Page")
 
