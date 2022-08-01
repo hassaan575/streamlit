@@ -48,8 +48,11 @@ def run(self):
             format_func=lambda app: app['title'])
 
         app['function']()
-
-
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
 # Security
 #passlib,hashlib,bcrypt,scrypt
 import hashlib
