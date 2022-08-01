@@ -130,17 +130,6 @@ def main():
 
 				st.success("Logged In as {}".format(username))
 
-				
-				if task == "Prediction Page":
-					st.subheader("Prediction Page")
-
-				elif task == "Increased Interest Rate":
-					st.subheader("Increased Interest Rate")
-				elif task == "Add Stock to Fav List":
-					st.subheader("User Profiles")
-					user_result = view_all_users()
-					clean_db = pd.DataFrame(user_result,columns=["Username","Password"])
-					st.dataframe(clean_db)
 			else:
 				st.warning("Incorrect Username/Password")
 
