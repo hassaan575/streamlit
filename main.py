@@ -1,5 +1,11 @@
 import streamlit as st
 import pandas as pd
+import json
+import requests  # pip install requests
+import streamlit as st
+from multiapp import MultiApp
+from apps import progress, h1, newp, recommendation, t1, prediction  # import your app modules here
+from streamlit_lottie import st_lottie  # pip install streamlit-lottie
 
 
 # Security
