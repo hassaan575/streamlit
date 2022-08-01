@@ -36,8 +36,8 @@ def view_all_users():
 	data = c.fetchall()
 	return data
 
-conn = sqlite3.connect('data1.db')
-c = conn.cursor()
+conn1 = sqlite3.connect('data1.db')
+c = conn1.cursor()
 # DB  Functions
 def create_usertable1():
 	c.execute('CREATE TABLE IF NOT EXISTS userstable(username TEXT,password TEXT)')
@@ -45,7 +45,7 @@ def create_usertable1():
 
 def add_userdata1(username,password):
 	c.execute('INSERT INTO userstable(username,password) VALUES (?,?)',(username,password))
-	conn.commit()
+	conn1.commit()
 
 def login_user1(username,password):
 	c.execute('SELECT * FROM userstable WHERE username =? AND password = ?',(username,password))
