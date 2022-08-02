@@ -3,8 +3,6 @@ import pandas as pd
 import json
 import requests  # pip install requests
 import requests  # pip install requests
-from apps import progress, h1, newp, recommendation, t1, prediction  # import your app modules here
-from streamlit_lottie import st_lottie  # pip install streamlit-lottie
 
 def load_lottieurl(url: str):
     r = requests.get(url)
