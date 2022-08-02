@@ -12,18 +12,6 @@ def load_lottieurl(url: str):
 
 lottie_hello = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_bek1x1xd.json")
 
-st_lottie(
-    lottie_hello,
-    speed=1,
-    reverse=False,
-    loop=True,
-    quality="low",  # medium ; high
-    # canvas
-    height=None,
-    width=None,
-    key=None,
-)
-
 
 class MultiApp:
     """Framework for combining multiple streamlit applications.
