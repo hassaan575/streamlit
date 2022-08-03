@@ -76,6 +76,7 @@ def main():
             result = login_user(username, check_hashes(password, hashed_pswd))
             if result:
                 st.success("Logged In as {}".format(username))
+		task = st.selectbox("Task",["Add Post","Analytics","Profiles"])
 
 
     elif choice == "Login  as User":
