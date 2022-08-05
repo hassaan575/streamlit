@@ -93,11 +93,11 @@ def main():
             result = login_user(username, check_hashes(password, hashed_pswd))
             if result:
 
-                st.success("Logged In as {}".format(username))
-                task = st.selectbox("Navigation",["homepage","Stockdata","Progress","recommendation","Sto","FuturePrediction","prediction"])
-		if task =="FuturePrediction":
-			image = Image.open('1.PNG')
-			st.image(image)
+              st.success("Logged In as {}".format(username))
+              task = st.selectbox("Navigation",["homepage","Stockdata","Progress","recommendation","Sto","FuturePrediction","prediction"])
+              if task == "FuturePrediction":
+			              image = Image.open('1.PNG')
+			              st.image(image)
 
 
             else:
