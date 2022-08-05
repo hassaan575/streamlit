@@ -93,7 +93,7 @@ def main():
             if result:
 
                 st.success("Logged In as {}".format(username))
-                task = st.selectbox("Navigation",["homepage","Stockdata","Progress","recommendation","Sto","prediction"])
+                task = st.selectbox("Navigation",["homepage","Stockdata","Progress","recommendation","Sto","FuturePrediction","prediction"])
 
             else:
                 st.warning("Incorrect Username/Password")
