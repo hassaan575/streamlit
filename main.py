@@ -75,7 +75,7 @@ def main():
             hashed_pswd = make_hashes(password)
 
             result = login_user(username, check_hashes(password, hashed_pswd))
-	if result:
+            if result:
                 st.success("Logged In as {}".format(username))
                 task = st.selectbox("Navigation",["homepage","Stockdata"])
 
