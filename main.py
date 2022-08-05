@@ -95,7 +95,6 @@ def main():
 
                 st.success("Logged In as {}".format(username))
                 task = st.selectbox("Navigation",["homepage","Stockdata","Progress","recommendation","Sto","FuturePrediction","prediction"])
-		
 		if task =="FuturePrediction":
 			image = Image.open('1.PNG')
 			st.image(image)
