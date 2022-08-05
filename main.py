@@ -3,6 +3,7 @@ import pandas as pd
 import json
 import requests  # pip install requests
 import streamlit as st
+from PIL import Image
 
 
 # Security
