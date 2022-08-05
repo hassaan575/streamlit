@@ -98,7 +98,14 @@ def main():
               if task == "FuturePrediction":
 			              image = Image.open('1.PNG')
 			              st.image(image)
+			              image = Image.open('3.PNG')
+			              st.image(image)
+			              image = Image.open('2.PNG')
+			              st.image(image)
+			              image = Image.open('4.PNG')
+			              st.image(image)
 
+				
 
             else:
                 st.warning("Incorrect Username/Password")
