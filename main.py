@@ -96,7 +96,9 @@ def main():
 						create_Ticker()
 						add_Ticker("Tickers Name: ",Ticker)	
 				elif task == "Analytics":
-					st.subheader("Analytics")
+					Ticker1 = st.sidebar.text_input("Ticker Name")
+					if st.button("Delete"):					
+						remove_Ticker(Ticker1)
 				elif task == "Profiles":
 					st.subheader("View Tickers")
 					user_result = view_all_Tickers()
