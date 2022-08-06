@@ -49,7 +49,7 @@ def add_Ticker(name,symbol):
 
 
 def view_all_Tickers():
-	c.execute('SELECT * FROM Tickerstable')
+	c.execute('SELECT symbol FROM Tickerstable')
 	data = c.fetchall()
 	return data
 
@@ -95,7 +95,7 @@ def main():
 				elif task == "Profiles":
 					st.subheader("View Tickers")
 					user_result = view_all_Tickers()
-					clean_db = pd.DataFrame(user_result,columns=["Ticker Name"])
+					clean_db = pd.DataFrame(user_result,columns=[ "Ticker's Name: "])
 					st.dataframe(clean_db)
 			else:
 				st.warning("Incorrect Username/Password")
