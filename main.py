@@ -47,6 +47,10 @@ def add_Ticker(name,symbol):
 	c.execute('INSERT INTO Tickerstable(name,symbol) VALUES (?,?)',(name,symbol))
 	conn.commit()
 
+def remove_Ticker(symbol):
+	c.execute('DELETE FROM Tickerstable WHERE name =? AND symbol = ?',("Tickers Name: ",symbol))
+	conn.commit()
+	
 
 def view_all_Tickers():
 	c.execute('SELECT symbol FROM Tickerstable')
