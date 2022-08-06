@@ -117,7 +117,7 @@ def main():
 				st.subheader("Select Your Desired Model")
 				if st.button("Linear Regression"):
 					st.subheader("LR")
-				if(st.button("LSTMS"))
+				elif(st.button("LSTMS"))
 			else:
 				st.warning("Incorrect Username/Password")
 
