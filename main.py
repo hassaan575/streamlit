@@ -105,10 +105,10 @@ def main():
 
 				st.success("Logged In as {}".format(username))
 				ticker = st.selectbox("Choose ticker :", ['AAPL [Apple]'
-                                 #'FB [Facebook]',
-                                 #'HDB [HDFC Bank Limited]',
-                                 #'MSFT [Microsoft]',
-                                 #'TSLA [Tesla, Inc.]'
+                                 'FB [Facebook]',
+                                 'HDB [HDFC Bank Limited]',
+                                 'MSFT [Microsoft]',
+                                 'TSLA [Tesla, Inc.]'
                                 ])
 			
 ##### Displaying Slider and Data table #####
