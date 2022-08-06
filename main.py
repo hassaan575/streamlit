@@ -99,7 +99,7 @@ def main():
 					Ticker1 = st.sidebar.text_input("Ticker Name")
 					if st.button("Delete"):					
 						remove_Ticker(Ticker1)
-				elif task == "View tickers":
+				elif task == "View Tickers":
 					st.subheader("View Tickers")
 					user_result = view_all_Tickers()
 					clean_db = pd.DataFrame(user_result,columns=[ "Ticker's Name: "])
