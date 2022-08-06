@@ -104,23 +104,10 @@ def main():
 			if result:
 
 				st.success("Logged In as {}".format(username))
+				Days = st.text_input("Enter Prediction Days")
+  				st.subheader("Select Your Desired Model")
 
-				task = st.selectbox("Task",["Add to Fav","Remove From Fav","View Favs"])
-				if task == "Add to Fav":
-					st.subheader("Add Your Ticker")
-					Ticker = st.sidebar.text_input("Ticker Name")
-					if st.button("Add"):
-						create_favTicker()
-						add_favTicker("Tickers Name: ",Ticker)	
-				elif task == "Remove From Fav":
-					Ticker1 = st.sidebar.text_input("Ticker Name")
-					if st.button("Remove"):					
-						remove_favTicker(Ticker1)
-				elif task == "View Favs":
-					st.subheader("View Favs")
-					user_result = view_all_favTickers()
-					clean_db = pd.DataFrame(user_result,columns=[ "Ticker's Name: "])
-					st.dataframe(clean_db)
+				
 			else:
 				st.warning("Incorrect Username/Password")
 
