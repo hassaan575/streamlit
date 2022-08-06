@@ -40,19 +40,19 @@ def view_all_users():
 #----------------------------
 # DB  Functions
 def create_Ticker():
-	c.execute('CREATE TABLE IF NOT EXISTS Tickertable(name TEXT)')
+	c.execute('CREATE TABLE IF NOT EXISTS Tickerstable(name TEXT,symbol TEXT)')
 
 
-def add_Ticker(name):
-	c.execute('INSERT INTO Tickertable(name) VALUES (?)',(name))
+def add_Ticker(name,symbol):
+	c.execute('INSERT INTO Tickerstable(name,symbol) VALUES (?,?)',(name,symbol))
 	conn.commit()
 
 
-
-def view_all_tickers():
-	c.execute('SELECT * FROM Tickertable')
+def view_all_Tickers():
+	c.execute('SELECT * FROM Tickerstable')
 	data = c.fetchall()
 	return data
+
 
 
 
@@ -94,7 +94,7 @@ def main():
 					st.subheader("Analytics")
 				elif task == "Profiles":
 					st.subheader("View Tickers")
-					user_result = view_all_tickers()
+					user_result = view_all_Tickers()
 					clean_db = pd.DataFrame(user_result,columns=["Ticker Name"])
 					st.dataframe(clean_db)
 			else:
