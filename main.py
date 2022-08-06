@@ -35,7 +35,24 @@ def view_all_users():
 	c.execute('SELECT * FROM userstable')
 	data = c.fetchall()
 	return data
+# DB  Functions
+def create_favTicker():
+	c.execute('CREATE TABLE IF NOT EXISTS favTickerstable(name TEXT,symbol TEXT)')
 
+
+def add_favTicker(name,symbol):
+	c.execute('INSERT INTO favTickerstable(name,symbol) VALUES (?,?)',(name,symbol))
+	conn.commit()
+
+def remove_favTicker(symbol):
+	c.execute('DELETE FROM favTickerstable WHERE name =? AND symbol = ?',("Tickers Name: ",symbol))
+	conn.commit()
+	
+
+def view_all_favTickers():
+	c.execute('SELECT symbol FROM favTickerstable')
+	data = c.fetchall()
+	return data
 
 #----------------------------
 # DB  Functions
@@ -88,20 +105,20 @@ def main():
 
 				st.success("Logged In as {}".format(username))
 
-				task = st.selectbox("Task",["Add Ticker","Remove Ticker","View Tickers"])
-				if task == "Add Ticker":
+				task = st.selectbox("Task",["Add to Fav","Remove From Fav","View Favs"])
+				if task == "Add to Fav":
 					st.subheader("Add Your Ticker")
 					Ticker = st.sidebar.text_input("Ticker Name")
 					if st.button("Add"):
-						create_Ticker()
-						add_Ticker("Tickers Name: ",Ticker)	
-				elif task == "Remove Ticker":
+						create_favTicker()
+						add_favTicker("Tickers Name: ",Ticker)	
+				elif task == "Remove From Fav":
 					Ticker1 = st.sidebar.text_input("Ticker Name")
-					if st.button("Delete"):					
-						remove_Ticker(Ticker1)
-				elif task == "View Tickers":
-					st.subheader("View Tickers")
-					user_result = view_all_Tickers()
+					if st.button("Remove"):					
+						remove_favTicker(Ticker1)
+				elif task == "View Favs":
+					st.subheader("View Favs")
+					user_result = view_all_favTickers()
 					clean_db = pd.DataFrame(user_result,columns=[ "Ticker's Name: "])
 					st.dataframe(clean_db)
 			else:
