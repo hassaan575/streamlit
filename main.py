@@ -86,14 +86,16 @@ def main():
 
 				task = st.selectbox("Task",["Add Post","Analytics","Profiles"])
 				if task == "Add Post":
-					st.subheader("Add Your Post")
-
+					st.subheader("Add Your Ticker")
+					Ticker = st.sidebar.text_input("Ticker Name")
+					create_Ticker():
+					add_Ticker(Ticker)	
 				elif task == "Analytics":
 					st.subheader("Analytics")
 				elif task == "Profiles":
-					st.subheader("User Profiles")
-					user_result = view_all_users()
-					clean_db = pd.DataFrame(user_result,columns=["Username","Password"])
+					st.subheader("View Tickers")
+					user_result = view_all_tickers()
+					clean_db = pd.DataFrame(user_result,columns=["Ticker Name"])
 					st.dataframe(clean_db)
 			else:
 				st.warning("Incorrect Username/Password")
