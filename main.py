@@ -105,7 +105,7 @@ def main():
 
 				st.success("Logged In as {}".format(username))
 				ticker = st.selectbox("Choose ticker :", ['AAPL [Apple]'
-                                 'FB [Facebook]',
+                                 ,'FB [Facebook]',
                                  'HDB [HDFC Bank Limited]',
                                  'MSFT [Microsoft]',
                                  'TSLA [Tesla, Inc.]'
