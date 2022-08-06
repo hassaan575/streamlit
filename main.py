@@ -44,7 +44,7 @@ def create_Ticker():
 
 
 def add_Ticker(username):
-	c.execute('INSERT INTO Tickertable(username) VALUES (?)',(username))
+	c.execute('INSERT INTO Tickertable(name) VALUES (?)',(username))
 	conn.commit()
 
 
