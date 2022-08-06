@@ -104,9 +104,8 @@ def main():
 			if result:
 
 				st.success("Logged In as {}".format(username))
-				Days = st.text_input("Enter Prediction Days")
-                                st.subheader("Select Your Desired Model")
-
+				Days  st.text_input("Enter Prediction Days")
+				st.subheader("Select Your Desired Model")
 				
 			else:
 				st.warning("Incorrect Username/Password")
