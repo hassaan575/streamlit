@@ -43,8 +43,8 @@ def create_Ticker():
 	c.execute('CREATE TABLE IF NOT EXISTS Tickertable(name TEXT)')
 
 
-def add_Ticker(username):
-	c.execute('INSERT INTO Tickertable VALUES (?)',(username))
+def add_Ticker(name):
+	c.execute('INSERT INTO Tickertable(name) VALUES (?)',(name))
 	conn.commit()
 
 
