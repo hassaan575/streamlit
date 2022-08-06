@@ -89,7 +89,7 @@ def main():
 					st.subheader("Add Your Ticker")
 					Ticker = st.sidebar.text_input("Ticker Name")
 					create_Ticker()
-					add_Ticker(Ticker)	
+					add_Ticker("Tickers Name: ",Ticker)	
 				elif task == "Analytics":
 					st.subheader("Analytics")
 				elif task == "Profiles":
