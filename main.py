@@ -88,18 +88,18 @@ def main():
 
 				st.success("Logged In as {}".format(username))
 
-				task = st.selectbox("Task",["Add Post","Analytics","Profiles"])
-				if task == "Add Post":
+				task = st.selectbox("Task",["Add Ticker","Remove Ticker","View Tickers"])
+				if task == "Add Ticker":
 					st.subheader("Add Your Ticker")
 					Ticker = st.sidebar.text_input("Ticker Name")
 					if st.button("Add"):
 						create_Ticker()
 						add_Ticker("Tickers Name: ",Ticker)	
-				elif task == "Analytics":
+				elif task == "Remove Ticker":
 					Ticker1 = st.sidebar.text_input("Ticker Name")
 					if st.button("Delete"):					
 						remove_Ticker(Ticker1)
-				elif task == "Profiles":
+				elif task == "View tickers":
 					st.subheader("View Tickers")
 					user_result = view_all_Tickers()
 					clean_db = pd.DataFrame(user_result,columns=[ "Ticker's Name: "])
