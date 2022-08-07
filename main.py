@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from datetime import date
 from PIL import Image
-import matplotlib.pyplot as plt
 
 # Security
 #passlib,hashlib,bcrypt,scrypt
