@@ -114,6 +114,7 @@ def main():
 ##### Displaying Slider and Data table #####
 				(start_date, end_date) = st.slider("Select date range :", date(2012, 1, 1), date.today(),(date(2012, 1, 1), date.today()),format="DD/MM/YYYY")
 				days = st.text_input("Enter Prediction Days")
+				st.subheader(int(days))
 				st.subheader("Select Your Desired Model")
 				if st.button("Linear Regression"):
 					st.subheader("LR")
