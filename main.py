@@ -121,9 +121,10 @@ def main():
 					st.subheader("Linear Regression")
 				elif(st.button("LSTMS")):
 					st.subheader("LSTM")
+					
 					st.subheader("According to Predictions a RISE is expected so=> BUY")
 					st.subheader("RMSE: 15.6")
-					st.subheader("Expected Closing Price is: 325.7")
+					st.subheader("Expected Closing Price is: 125.7")
 			else:
 				st.warning("Incorrect Username/Password")
 
