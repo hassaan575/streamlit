@@ -121,8 +121,12 @@ def main():
 					st.subheader("Linear Regression")
 				elif(st.button("LSTMS")):
 					st.subheader("LSTM")
-					image = Image.open("1.PNG")
+					image = Image.open("3.PNG")
 					st.image(image)
+					image1 = Image.open("2.PNG")
+					st.image(image1)
+					image2= Image.open("1.PNG")
+					st.image(image2)
 					st.subheader("According to Predictions a RISE is expected so=> BUY")
 					st.subheader("RMSE: 15.6")
 					st.subheader("Expected Closing Price is: 125.7")
