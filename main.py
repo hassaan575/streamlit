@@ -119,6 +119,11 @@ def main():
 				st.subheader("Select Your Desired Model")
 				if st.button("Linear Regression"):
 					st.subheader("Linear Regression")
+					image3 = Image.open("4.PNG")
+					st.image(image3)
+					st.subheader("According to Predictions a RISE is expected so=> BUY")
+					st.subheader("RMSE: 9.6")
+					st.subheader("Expected Closing Price is: 180.5")
 				elif(st.button("LSTMS")):
 					st.subheader("LSTM")
 					image = Image.open("3.PNG")
