@@ -121,6 +121,8 @@ def main():
 					st.subheader("Linear Regression")
 					image3 = Image.open("4.PNG")
 					st.image(image3)
+					image4=Image.open("5.PNG")
+					st.image(image4)
 					st.subheader("According to Predictions a RISE is expected so=> BUY")
 					st.subheader("RMSE: 9.6")
 					st.subheader("Expected Closing Price is: 180.5")
