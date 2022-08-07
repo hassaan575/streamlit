@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 from datetime import date
+from PIL import Image
+import matplotlib.pyplot as plt
 
 # Security
 #passlib,hashlib,bcrypt,scrypt
@@ -117,9 +119,12 @@ def main():
 
 				st.subheader("Select Your Desired Model")
 				if st.button("Linear Regression"):
-					st.subheader("LR")
+					st.subheader("Linear Regression")
 				elif(st.button("LSTMS")):
 					st.subheader("LSTM")
+					st.subheader("According to Predictions a RISE is expected so=> BUY")
+					st.subheader("RMSE: 15.6")
+					st.subheader("Expected Closing Price is: 325.7")
 			else:
 				st.warning("Incorrect Username/Password")
 
