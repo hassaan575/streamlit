@@ -114,6 +114,7 @@ def main():
 			
 ##### Displaying Slider and Data table #####
 				(start_date, end_date) = st.slider("Select date range :", date(2012, 1, 1), date.today(),(date(2012, 1, 1), date.today()),format="DD/MM/YYYY")
+				st.subheader("Note: Enter the weeks/months or Year in days format e.g., 1 year= 365 days")
 				days = st.number_input("Enter Prediction Days")
 				stocks = ["Select the Stock", "AAPL", "GOOG", "MSFT", "AMZN", "TSLA", "GME", "NVDA", "AMD"]
 				stock_select = st.selectbox("", stocks, index=0)
