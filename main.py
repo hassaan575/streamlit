@@ -115,6 +115,10 @@ def main():
 ##### Displaying Slider and Data table #####
 				(start_date, end_date) = st.slider("Select date range :", date(2012, 1, 1), date.today(),(date(2012, 1, 1), date.today()),format="DD/MM/YYYY")
 				days = st.number_input("Enter Prediction Days")
+				stocks = ["Select the Stock", "AAPL", "GOOG", "MSFT", "AMZN", "TSLA", "GME", "NVDA", "AMD"]
+				stock_select = st.selectbox("", stocks, index=0)
+				n_years = st.slider('Years of prediction:', 1, 4)
+				
 
 				st.subheader("Select Your Desired Model")
 				if st.button("Linear Regression"):
